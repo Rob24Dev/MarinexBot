@@ -1,0 +1,6 @@
+name: MarinexBot
+version: '${project.version}'
+main: rob24dev.marinexbot.Main
+api-version: '1.19'
+authors: [Rob24Dev]
+description: Plugin by Rob24Dev for Marinex
