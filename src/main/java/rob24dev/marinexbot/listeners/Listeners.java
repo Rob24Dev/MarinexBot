@@ -147,7 +147,7 @@ public class Listeners extends ListenerAdapter {
         }
     }
 
-    private EmbedBuilder geteNewView() {
+    private EmbedBuilder getNewView() {
         EmbedBuilder newViewsEmbed = new EmbedBuilder();
         newViewsEmbed.setTitle("**Marinex | Anketa**");
         newViewsEmbed.setColor(0xd48600);
@@ -191,7 +191,7 @@ public class Listeners extends ListenerAdapter {
         if (event.getModalId().equalsIgnoreCase("newPossibility")) {
             String possibilityText = Objects.requireNonNull(event.getValue("PossibilityText")).getAsString();
             possibilitiesList.add(new PossibilitiesManager(possibilityText));
-            event.replyEmbeds(geteNewView().build()).setEphemeral(true).setActionRow(add, remove, removePossibility, send).queue();
+            event.replyEmbeds(getNewView().build()).setEphemeral(true).setActionRow(add, remove, removePossibility, send).queue();
             createModal();
         }
     }
@@ -247,7 +247,7 @@ public class Listeners extends ListenerAdapter {
                         event.reply("Tato anketa musí mít aspoň jednu možnost odpovědi").setEphemeral(true).queue();
                     } else {
                         possibilitiesList.remove(possibilitiesList.size() -1);
-                        event.replyEmbeds(geteNewView().build()).setEphemeral(true).setActionRow(add, remove, removePossibility, send).queue();
+                        event.replyEmbeds(getNewView().build()).setEphemeral(true).setActionRow(add, remove, removePossibility, send).queue();
                         createModal();
                     }
                 } else {
